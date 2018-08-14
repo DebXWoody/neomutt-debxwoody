@@ -1,0 +1,257 @@
+/**
+ * Filename: big-picture.dot
+ *
+ * Entity: [shape=box,style=filled,color=".7 .3 1.0"]
+ * Utils: [shape=box,style=filled,color=".4 .3 1.0"]
+ * View:  [shape=box,style=filled,color=".2 .3 1.0"]
+ */
+
+digraph G {
+   
+    // Beziehungen
+    Account -> HashElem [style=dotted];
+    Account -> ConfigSet [style=dotted];
+    Address -> Address [style=dotted, label="jdjd"];
+    Alias -> Address [style=dotted];
+    AttachCtx -> Header [style=dotted, label="Header of what?"];
+    AttachCtx -> Body [style=dotted, label="Body of what?"];
+    AttachPtr -> Body;
+    Body -> Content;
+    Body -> AttachPtr;
+    BroserState -> FolderFile [style=dotted];
+    ChildCtx -> Context  [style=dotted];
+    ColorLine -> Pattern [style=dotted];
+    ComposeRedrawData -> Header [style=dotted];
+    CompressInfo -> MxOps [style=dotted];
+    ConfigDef -> ConfigSet [style=dotted];
+    ConfigSet -> Hash [style=dotted];
+    ConfigSet -> ConfigSetType [style=dotted];
+    ConfigSetType -> ConfigSet [style=dotted];
+    Connection -> Account [style=dotted];
+    Context -> MxOps [style=dotted];
+    Context -> Header [style=dotted];
+    Context -> MuttThread [style=dotted];
+    Context -> Pattern [style=dotted];
+    Context -> Menu [style=dotted];
+    Context -> Hash [style=dotted];
+    CryptCache -> CryptCache [style=dotted, label = "Is it a list?"];
+    CrypEntry -> CryptKeyInfo [style=dotted];
+    CryptKeyInfo -> CryptKeyInfo [style=dotted, label = "Is it a list?"];
+    CryptModuleSpecs -> Body [style=dotted];
+    EnrichedState -> State [style=dotted];
+    Entry -> Query [style=dotted];
+    Envelope -> Address [style=dotted];
+    Envelope -> Buffer [style=dotted];
+    FetchCtx -> HeaderCache [style=dotted];
+    FetchCtx -> Context [style=dotted];
+    FetchCtx -> Progress [style=dotted];
+    Folder -> FolderFile [style=dotted];
+    FolderFile -> NntpData [style=dotted];
+    Group -> RegrexList [style=dotted];
+    Group -> Address [style=dotted];
+    GroupContext -> Group [style=dotted];
+    Hash -> HashElem [style=dotted];
+    HashElem -> HashKey [style=dotted];
+    HashWalkState -> HashElem [style=dotted];
+    HdrFormatInfo -> Header [style=dotted];
+    HdrFormatInfo -> Context [style=dotted];
+    Header -> MuttThread [style=dotted];
+    Header -> Body [style=dotted];
+    Header -> Envelope [style=dotted];
+    Hook -> Regex [style=dotted];
+    Hook -> Pattern [style=dotted];
+    ImapData -> HeaderCache  [style=dotted];
+    ImapData -> Header [style=dotted];
+    ImapData -> Context [style=dotted];
+    ImapData -> Hash  [style=dotted];
+    ImapData -> ImapCache  [style=dotted];
+    ImapData -> Buffer  [style=dotted];
+    ImapData -> Connection  [style=dotted];
+    ImapData -> BodyCache  [style=dotted];
+    ImapData -> ImapCommand  [style=dotted];
+    ImapHeader -> ImapHeaderData  [style=dotted];
+    ImapMbox -> Account  [style=dotted];
+    Inheritance -> HashElem [style=dotted];
+    Inheritance -> Account [style=dotted];
+    Keymap -> Keymap [style=dotted];
+    Line -> Syntax [style=dotted];
+    Line -> QClass [style=dotted];
+    Lookup -> Regex [style=dotted];
+    MailboxNode -> Mailbox [style=dotted];
+    Maildir -> Header [style=dotted];
+    Menu -> MuttWindow [style=dotted];
+    MuttThread -> Header [style=dotted];
+    NmCtxData -> Progress [style=dotted];
+    NmCtxData -> Url [style=dotted];
+    NntpData -> NntpAcache [style=dotted];
+    NntpData -> NewsrcEntry [style=dotted];
+    NntpData -> NntpServer [style=dotted];
+    NntpData -> BodyCache [style=dotted];
+    NntpServer -> Connection [style=dotted];
+    NntpServer -> Hash [style=dotted];
+    Pager -> Header [style=dotted];
+    Pager -> Context [style=dotted];
+    Pager -> Body [style=dotted];
+    Pager -> AttachCtx [style=dotted];
+    PagerRedrawData -> QClass [style=dotted];
+    PagerRedrawData -> Line [style=dotted];
+    PagerRedrawData -> MuttWindow [style=dotted];
+    PagerRedrawData -> Menu [style=dotted];
+    PagerRedrawData -> Pager [style=dotted];
+    Pattern -> Group [style=dotted];
+    PgpCache -> PgpCache [style=dotted];
+    PgpEntry -> PgpUid [style=dotted];
+    PgpKeyInfo -> PgpKeyInfo [style=dotted];
+    PgpKeyInfo -> PgpUid [style=dotted];
+    PgpUid -> PgpUid [style=dotted];
+    PgpUid -> PgpKeyInfo [style=dotted];
+    PopData -> PopCache  [style=dotted];
+    PopData -> Connection  [style=dotted];
+    PopData -> BodyCache  [style=dotted];
+    QClass -> QClass [style=dotted];
+    Query -> Address [style=dotted];
+    RegexList -> Regex [style=dotted];
+    ReplaceList -> Regex [style=dotted];
+    Rfc2231Parameter -> Rfc2231Parameter [style=dotted];
+    SbEntry -> Mailbox  [style=dotted];
+    Score -> Pattern  [style=dotted];
+    SmimeKey -> SmimeKey  [style=dotted];
+
+    // Objects
+    AnsiAttr
+    Account [shape=box,style=filled,color=".7 .3 1.0"];
+    AttachCtx
+    AttachMatch
+    AttachPtr[shape=box,style=filled,color=".4 .3 1.0"];
+    B64Context
+    Binding
+    Body
+    BodyCache
+    BrowserState
+    Buffer
+    ChildCtx
+    ColorLine
+    Command
+    CompileOptions
+    ComposeRedrawData
+    CompressInfo
+    ConfigDef
+    ConfigSet
+    ConfigSetType
+    Connection
+    Content
+    ContentState
+    Context
+    Coord
+    CryptCache
+    CryptEntry
+    CryptKeyInfo
+    CryptModuleSpecs
+    DnArray
+    EnrichedState
+    EnterState
+    Entry
+    Envelope
+    etags
+    Event
+    FetchCtx
+    FgetConv
+    FgetConvNot
+    FlowedState
+    Folder
+    FolderFile
+    Group
+    GroupContext
+    Hash
+    HashElem
+    HashKey
+    HashWalkState
+    HcacheDbCtx
+    HcacheLmdbCtx
+    HcacheOps
+    HdrFormatInfo
+    Header
+    HeaderCache
+    History
+    Hook
+    ImapAuth
+    ImapCache
+    ImapCommand
+    ImapData
+    ImapHeader
+    ImapHeaderData
+    ImapList
+    ImapMbox
+    ImapStatus
+    Inheritance
+    Keymap
+    Line
+    ListNode
+    LogLine
+    Lookup
+    Mailbox
+    MailboxNode
+    Maildir
+    Mapping
+    MbTable
+    Md5Ctx
+    Menu
+    Message
+    MhData
+    MhSequences
+    MimeNames
+    MUpdate
+    MuttThread
+    MuttWindow
+    MxOps
+    MyVar
+    NewsrcEntry
+    NmCtxData
+    NmHdrData
+    NntpAcache
+    NntpData
+    NntpHeaderData
+    NntpServer
+    Pager
+    PagerRedrawData
+    Parameter
+    Pattern
+    PatternCache
+    PatternFlags
+    PgpCache
+    PgpCommandContext
+    PgpEntry
+    PgpKeyInfo
+    PgpUid
+    PopAuth
+    PopCache
+    PopData
+    Progress
+    QClass
+    Query
+    RangeRegex
+    Regex
+    RegexList
+    ReplaceList
+    Resize
+    Rfc1524MailcapEntry
+    Rfc2231Parameter
+    SaslData
+    SbEntry
+    Score
+    Sha1Ctx
+    SmimeCommandContext
+    SmimeKey
+    State
+    Syntax
+    SysExits
+    TagNode
+    test__
+    TlsSockData
+    TunnelData
+    Tz
+    Url
+    UrlQueryString
+    Validate
+}
+
